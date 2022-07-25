@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Serif+Display:ital,wght@0,100;0,300;0,400;1,300;1,400&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+top-element {
+  color: rgb(58, 58, 58);
+  height: 78vh;
+  display: flex;
+  align-items: center;
+  padding: 6%;
+}
+
+top-element section:first-child {
+  flex-basis: 70%;
+}
+
+top-element h1 {
+  font-size: 10rem;
+  font-weight: 300;
+  letter-spacing: 20px;
+  font-family: "Noto Serif Display", serif;
+}
+
+top-element h2 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+}
+
+top-element img {
+  /* height: 100%; */
+  width: 30vw;
+}
+
+main > h1 {
+  font-family: "Nanum Gothic", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 2em;
+}
+
+.search_section {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchMovie {
+  height: 33px;
+  width: 50%;
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+#searchMovieTitle {
+  height: 100%;
+  width: 100%;
+  min-width: 200px;
+  padding: 3px 7px;
+}
+
+.search_section button,
+.search_section img {
+  cursor: pointer;
+  height: 100%;
+}
+
+.search_section img {
+  width: 100%;
+}
+
+#searchMovie > * {
+  border-radius: 0;
+  border: #f3f3f3 0.5px solid;
+}
+
+#searchMovieTitle:focus {
+  outline-offset: 0;
+  outline: 0;
+  border: 0;
+}
+
+#searchMovie:focus-within {
+  border: 0.2px rgb(201, 201, 201) solid;
+}
+
+#movie-list {
+  margin: 5rem 2rem;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.movie {
+  /* temp background until i made the javascript with style.background */
+  /* background: center / contain no-repeat url(../assets/images/temp-poster.jpg); */
+  height: 300px;
+  width: 200px;
+  margin: 0.8rem 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
+  align-items: center;
+  color: rgb(58, 58, 58);
+  font-family: "Nanum Gothic", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.movie > * {
+  transition: all 0.3s ease-in-out;
+}
+
+.movie img {
+  position: relative;
+  width: 100%;
+}
+
+.desc > * {
+  padding-bottom: 8px;
+}
+
+.movie h3 {
+  font-size: 1.5rem;
+}
+
+.desc {
+  opacity: 0;
+  position: absolute;
+}
+
+.movie:hover img {
+  opacity: 0.2;
+}
+
+.movie:hover .desc {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.detail {
+  margin: 5em;
+  /* overflow: hidden; */
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.detail > div {
+  margin-top: 2em;
+  padding: 10px;
+}
+
+.detail > div > h1 {
+  margin-bottom: 15px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  flex-basis: 70%;
+}
+
+.flex-container div:last-child {
+  margin: 0 15px;
+}
+
+.movie-desc * {
+  margin-bottom: 0.5em;
+}
+
+.detail h1 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 2.5em;
+}
+
+.movie-desc {
+  text-align: justify;
+}
+
+.side {
+  position: relative;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  position: absolute;
+  padding-top: 1rem;
+  bottom: 0;
+  right: 0;
+}
+
+#close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#close:hover {
+  color: #303030;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 850px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-container div {
+    margin-top: 1em;
+  }
+  top-element {
+    flex-flow: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  top-element h2 {
+    text-align: center;
+  }
+  top-element h1 {
+    font-size: 8rem;
+    text-align: center;
+  }
+}
